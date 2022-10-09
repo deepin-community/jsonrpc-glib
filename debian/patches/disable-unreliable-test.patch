@@ -1,0 +1,22 @@
+From: Jeremy Bicha <jbicha@ubuntu.com>
+Date: Wed, 14 Mar 2018 19:56:37 -0400
+Subject: disable unreliable test
+
+https://gitlab.gnome.org/GNOME/jsonrpc-glib/issues/2
+---
+ tests/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/meson.build b/tests/meson.build
+index c2c8e20..2eabd09 100644
+--- a/tests/meson.build
++++ b/tests/meson.build
+@@ -52,7 +52,7 @@ test_stress = executable('test-stress', 'test-stress.c',
+      link_args: test_link_args,
+   dependencies: test_deps,
+ )
+-test('test-stress', test_stress, env: test_env)
++# test('test-stress', test_stress, env: test_env)
+ 
+ test_gauntlet = executable('test-gauntlet', 'test-gauntlet.c',
+         c_args: test_cflags,
